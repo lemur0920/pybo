@@ -3,6 +3,8 @@ from starlette.middleware.cors import CORSMiddleware
 
 from domain.question import question_router
 from domain.answer import answer_router
+
+
 app = FastAPI()
 
 origins = [

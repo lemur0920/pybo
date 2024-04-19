@@ -10,6 +10,7 @@ router = APIRouter(
     prefix="/api/answer"
 )
 
+
 @router.post("/create/{question_id}", status_code=status.HTTP_204_NO_CONTENT)
 def answer_create(question_id: int,
                   _answer_create: answer_schema.AnswerCreate,
