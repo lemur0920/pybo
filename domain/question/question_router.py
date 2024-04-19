@@ -18,3 +18,4 @@ def question_list(db: Session = Depends(get_db)):
 def question_detail(question_id: int, db: Session = Depends(get_db)):
     question = question_crud.get_question(db,question_id)
     return question
+
