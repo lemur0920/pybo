@@ -1,5 +1,5 @@
 <script>
-    export let error // 전달받은 오류
+    export let error  // 전달받은 오류
 </script>
 
 {#if typeof error.detail === 'string'}
@@ -17,4 +17,3 @@
         {/each}
     </div>
 {/if}
-    
