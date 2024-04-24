@@ -15,7 +15,7 @@
             username: login_username,
             password: login_password,
         }
-        fastapi('login', url, params,
+        fastapi('login', url, params, 
             (json) => {
                 $access_token = json.access_token
                 $username = json.username

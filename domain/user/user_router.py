@@ -33,7 +33,6 @@ def user_create(_user_create: user_schema.UserCreate, db: Session = Depends(get_
 @router.post("/login", response_model=user_schema.Token)
 def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(),
                            db: Session = Depends(get_db)):
-
     # check user and password
     user = user_crud.get_user(db, form_data.username)
     if not user or not pwd_context.verify(form_data.password, user.password):
@@ -58,7 +57,7 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(),
 
 
 def get_current_user(token: str = Depends(oauth2_scheme),
-                      db: Session = Depends(get_db)):
+                     db: Session = Depends(get_db)):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
